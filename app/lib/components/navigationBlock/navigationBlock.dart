@@ -6,9 +6,11 @@ class NavigationBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final brightness = Theme.of(context).brightness;
-    final backgroundColor = brightness == Brightness.dark ? Colors.grey[800] : Colors.blue[400];
-    final textColor = brightness == Brightness.dark ? Colors.white : Colors.white;
-    
+    final backgroundColor =
+        brightness == Brightness.dark ? Colors.grey[800] : Colors.blue[400];
+    final textColor =
+        brightness == Brightness.dark ? Colors.white : Colors.white;
+
     return Container(
       height: 100,
       color: backgroundColor,
@@ -29,26 +31,22 @@ class NavigationBlock extends StatelessWidget {
               foregroundColor: MaterialStateProperty.all<Color>(textColor),
             ),
             onPressed: () {
-              
+              // Navigator.pushNamed(context, '/test');
             },
             child: const Text('Расписание'),
           ),
-                    TextButton(
+          TextButton(
             style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all<Color>(textColor),
             ),
-            onPressed: () {
-              
-            },
+            onPressed: () {},
             child: const Text('Новости'),
           ),
-                    TextButton(
+          TextButton(
             style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all<Color>(textColor),
             ),
-            onPressed: () {
-              
-            },
+            onPressed: () {},
             child: const Text('Абитуриентам'),
           ),
         ],

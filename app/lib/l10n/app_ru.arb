@@ -1,0 +1,11 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Мое приложение",
+  "welcomeMessage": "Добро пожаловать в мое приложение!",
+  "settings": "Настройки",
+  "listTeachers": "Список учителей",
+  "test": "Тест",
+  "testList": "Список тестов",
+  "language": "Язык",
+  "theme": "Тема"
+}

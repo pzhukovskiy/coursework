@@ -1,18 +1,24 @@
-import 'package:app/class/game.dart';
+import 'package:app/class/LanguageNotifier.dart';
 import 'package:app/class/teacher.dart';
+import 'package:app/components/dropMenuLanguages/dropMenuLanguages.dart';
 import 'package:app/components/mainAppBar/mainAppBar.dart';
+import 'package:app/components/test/test.dart';
+import 'package:app/l10n/l10n.dart';
 import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:app/pages/settings/settings.dart';
 import 'package:app/theme/theme.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeNotifier(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LanguageNotifier()), 
+        ChangeNotifierProvider(create: (context) => ThemeNotifier()),
+      ],
       child: const MyApp(),
     ),
   );
@@ -26,30 +32,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Game> games = [];
   List<Teacher> teachers = [];
 
   @override
   void initState() {
     super.initState();
-  }
-
-  Future<void> fetchGame() async {
-    final response = await http.get(
-      Uri.parse('https://api.dionisiubrovka.online/api/v1/games/'),
-      headers: {
-        'Authorization': 'Token 6b5c8514238ae3a1a840b1b0300b4181093e682d',
-      },
-    );
-
-    if (response.statusCode == 200) {
-      final List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
-      setState(() {
-        games = data.map((item) => Game.fromJson(item)).toList();
-      });
-    } else {
-      throw Exception('Failed to load data');
-    }
   }
 
   @override
@@ -59,11 +46,21 @@ class _MyAppState extends State<MyApp> {
       theme: themeNotifier.themeData,
       home: const MainAppBar(),
       debugShowCheckedModeBanner: false,
+      supportedLocales: L10n.all,
+      locale: const Locale('ru'),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       initialRoute: '/',
       routes: {
         '/settings': (context) => const SettingsPage(),
-        '/list': (context) => ListTeachersPage(),
-        },
+        '/list': (context) => const ListTeachersPage(),
+        '/test': (context) => MyList(),
+        '/testList': (context) => MyDropdown(),
+      }
     );
   }
 }
