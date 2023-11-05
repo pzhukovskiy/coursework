@@ -3,13 +3,7 @@ from .models import *
 
 # Register your models here.
 admin.site.register(User)
-# admin.site.register(Teacher)
-# admin.site.register(Room)
-# admin.site.register(Lesson)
 admin.site.register(Corpus)
-# admin.site.register(Subject)
-# admin.site.register(Student)
-# admin.site.register(Group)
 admin.site.register(Absent)
 
 @admin.register(Teacher)
@@ -47,3 +41,9 @@ class SubjectAdmin(admin.ModelAdmin):
     list_filter = ['subject']
     list_display = ['id', 'subject', 'description', 'type_subject']
     list_display_links = ['subject', 'description', 'type_subject']
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_filter = ['title']
+    list_display = ['id', 'title', 'description', 'main_text']
+    list_display_links = ['title', 'description', 'main_text']

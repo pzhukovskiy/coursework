@@ -20,6 +20,7 @@ class Teacher(models.Model):
     first_name = models.CharField(verbose_name='Имя преподавателя', max_length=30)
     last_name = models.CharField(verbose_name='Отчество преподавателя', max_length=30)
     image = models.CharField(verbose_name='Изображение преподавателя', max_length=255)
+    description = models.CharField(verbose_name='Описание преподавателя', max_length=255)
     room = models.ForeignKey('Room', on_delete=models.CASCADE, null=True)
     group = models.ForeignKey('Group', on_delete=models.CASCADE, null=True, blank=True)
     kurator = models.BooleanField(verbose_name='Куратор группы', default=False, blank=True, null=True)
@@ -181,3 +182,17 @@ class Absent(models.Model):
 
     def __str__(self):
         return f"{self.date_create} {self.group} {self.student} {self.reasone}"
+    
+class News(models.Model):
+    title = models.CharField(verbose_name='Название новости', max_length=255)
+    description = models.CharField(verbose_name='Описание новости', max_length=255)
+    main_text = models.CharField(verbose_name='Основной текст новости', max_length=255)
+    date_create = models.DateTimeField(auto_now=False, auto_created=True, verbose_name='Дата создания')
+    date_edit = models.DateTimeField(auto_now=True, auto_created=False, verbose_name='Дата изменения')
+
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
+
+    def __str__(self):
+        return f"{self.title} {self.description}"

@@ -7,6 +7,7 @@ router.register(r'teachers', TeacherModelViewSet)
 router.register(r'lessons', LessonModelViewSet)
 router.register(r'students', StudentModelViewSet)
 router.register(r'groups', GroupModelViewSet)
+router.register(r'news', NewsModelViewSet)
 
 urlpatterns = [
     path('', pageindex),

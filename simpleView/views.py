@@ -42,6 +42,10 @@ class SubjectModelViewSet(viewsets.ModelViewSet):
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
 
+class NewsModelViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer
+
 #python manage.py runserver
 #python manage.py startapp simpleView
 #python manage.py makemigrations
