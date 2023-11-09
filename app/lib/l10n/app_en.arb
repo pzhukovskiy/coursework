@@ -1,11 +1,15 @@
 {
   "@@locale": "en",
-  "appTitle": "My App",
-  "welcomeMessage": "Welcome to my app!",
-  "settings": "Settings",
-  "listTeachers": "List of Teachers",
-  "test": "Test",
-  "testList": "Test List",
-  "language": "Language",
-  "theme": "Theme"
+  "title": "Main page",
+  "college": "MSCDT",
+  "collegeInfo": "About college",
+  "schedule": "Schedule",
+  "structure": "Structure",
+  "offers": "Offers",
+  "profile": "Profile",
+  "collegeNews": "News college",
+  "seeAll": "See all",
+  "infoAboutTeacher": "Information about teacher",
+  "close": "Close",
+  "share": "Share"
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class L10n {
   static final all = [
-    Locale('ru'),
-    Locale('en'),
+    const Locale('ru'),
+    const Locale('en'),
   ];
 }

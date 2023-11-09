@@ -1,11 +1,15 @@
 {
   "@@locale": "ru",
-  "appTitle": "Мое приложение",
-  "welcomeMessage": "Добро пожаловать в мое приложение!",
-  "settings": "Настройки",
-  "listTeachers": "Список учителей",
-  "test": "Тест",
-  "testList": "Список тестов",
-  "language": "Язык",
-  "theme": "Тема"
+  "title": "Главная",
+  "college": "МГКЦТ",
+  "collegeInfo": "О колледже",
+  "schedule": "Расписание",
+  "structure": "Структура",
+  "offers": "Предложения",
+  "profile": "Профиль",
+  "collegeNews": "Новости колледжа",
+  "seeAll": "Смотреть все",
+  "infoAboutTeacher": "Информация о преподавателе",
+  "close": "Закрыть",
+  "share": "Поделиться"
 }

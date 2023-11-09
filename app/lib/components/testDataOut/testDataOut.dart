@@ -1,29 +1,41 @@
-import 'package:app/class/teacher.dart';
+import 'package:app/class/testData.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class BlockTeacher extends StatelessWidget {
-  final Teacher teacher;
+class TestDataOut extends StatelessWidget {
+  final Item items;
 
-  const BlockTeacher({Key? key, required this.teacher}) : super(key: key);
+  const TestDataOut({Key? key, required this.items}) : super(key: key);
 
   void _showPopup(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return Dialog(
-          child: Column(
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.infoAboutTeacher),
+          content: Column(
             children: [
-              Image.network(teacher.image, height: 100, width: 100),
-              Text('${teacher.middleName} ${teacher.firstName} ${teacher.lastName}'),
-              Text(teacher.description),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("Закрыть"),
+              Image.network(items.image, height: 100, width: 100),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Text(items.description),
               ),
             ],
           ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.close),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.share),
+            ),
+          ],
         );
       },
     );
@@ -55,7 +67,7 @@ class BlockTeacher extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(13.0),
-                  child: Image.network(teacher.image, height: 100, width: 100),
+                  child: Image.network(items.image, height: 100, width: 100),
                 ),
                 Expanded(
                   child: Column(
@@ -64,18 +76,11 @@ class BlockTeacher extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          '${teacher.middleName} ${teacher.firstName} ${teacher.lastName}',
+                          '${items.title}',
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               color: textColor),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          teacher.lastName,
-                          style: TextStyle(fontSize: 12, color: textColor),
                         ),
                       ),
                     ],

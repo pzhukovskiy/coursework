@@ -1,9 +1,10 @@
-import 'package:app/class/LanguageNotifier.dart';
 import 'package:app/class/teacher.dart';
+import 'package:app/components/aboutCollege/aboutCollege.dart';
+import 'package:app/components/block/myBlock.dart';
 import 'package:app/components/dropMenuLanguages/dropMenuLanguages.dart';
-import 'package:app/components/mainAppBar/mainAppBar.dart';
-import 'package:app/components/test/test.dart';
+import 'package:app/components/bottomBar/bottomBar.dart';
 import 'package:app/l10n/l10n.dart';
+import 'package:app/pages/collegeNews/collegeNewsPage.dart';
 import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:app/pages/settings/settings.dart';
 import 'package:app/theme/theme.dart';
@@ -16,7 +17,6 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => LanguageNotifier()), 
         ChangeNotifierProvider(create: (context) => ThemeNotifier()),
       ],
       child: const MyApp(),
@@ -44,8 +44,10 @@ class _MyAppState extends State<MyApp> {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return MaterialApp(
       theme: themeNotifier.themeData,
-      home: const MainAppBar(),
+      home: const BottomBar(),
       debugShowCheckedModeBanner: false,
+
+      // * Локализация работает только если менять вручную
       supportedLocales: L10n.all,
       locale: const Locale('ru'),
       localizationsDelegates: const [
@@ -58,8 +60,10 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/settings': (context) => const SettingsPage(),
         '/list': (context) => const ListTeachersPage(),
-        '/test': (context) => MyList(),
-        '/testList': (context) => MyDropdown(),
+        '/test': (context) => MyDropdown(),
+        '/block': (context) => const MyBlock(),
+        '/about': (context) => const AboutCollege(),
+        '/news': (context) => const CollegeNewsPage(),
       }
     );
   }

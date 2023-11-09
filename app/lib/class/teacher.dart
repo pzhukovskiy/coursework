@@ -12,6 +12,7 @@ class Teacher {
   bool kurator;
   String dateEdit;
   String image;
+  String description;
 
   Teacher({
     required this.id,
@@ -24,6 +25,7 @@ class Teacher {
     required this.kurator,
     required this.dateEdit,
     required this.image,
+    required this.description,
   });
 
   factory Teacher.fromJson(Map<String, dynamic> json) {
@@ -39,6 +41,7 @@ class Teacher {
         kurator: json['kurator'],
         dateEdit: json['date_edit'],
         image: json['image'],
+        description: json['description']
       );
     } else {
       return Teacher(
@@ -52,6 +55,7 @@ class Teacher {
         kurator: json['kurator'],
         dateEdit: json['date_edit'],
         image: json['image'],
+        description: json['description']
       );
     }
   }
