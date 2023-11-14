@@ -12,6 +12,18 @@ class TeacherAdmin(admin.ModelAdmin):
     list_display = ['id', 'middle_name', 'first_name', 'last_name']
     list_display_links = ['middle_name', 'first_name', 'last_name']
 
+@admin.register(Employee)
+class TeacherAdmin(admin.ModelAdmin):
+    list_filter = ['middle_name']
+    list_display = ['id', 'middle_name', 'first_name', 'last_name']
+    list_display_links = ['middle_name', 'first_name', 'last_name']
+
+@admin.register(EmployeeAHCH)
+class TeacherAdmin(admin.ModelAdmin):
+    list_filter = ['middle_name']
+    list_display = ['id', 'middle_name', 'first_name', 'last_name']
+    list_display_links = ['middle_name', 'first_name', 'last_name']
+
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_filter = ['middle_name']

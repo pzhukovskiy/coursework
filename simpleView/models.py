@@ -33,6 +33,36 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f"{self.middle_name} {self.first_name} {self.last_name}"
+    
+class Employee(models.Model):
+    middle_name = models.CharField(verbose_name='Фамилия служащего', max_length=30)
+    first_name = models.CharField(verbose_name='Имя служащего', max_length=30)
+    last_name = models.CharField(verbose_name='Отчество служащего', max_length=30)
+    image = models.CharField(verbose_name='Изображение служащего', max_length=255)
+    description = models.CharField(verbose_name='Описание служащего', max_length=255)
+
+    class Meta:
+        verbose_name = 'Служащий'
+        verbose_name_plural = 'Служащие'
+
+    def __str__(self):
+        return f"{self.middle_name} {self.first_name} {self.last_name}"
+    
+
+#Служащие АХЧ
+class EmployeeAHCH(models.Model):
+    middle_name = models.CharField(verbose_name='Фамилия служащего АХЧ', max_length=30)
+    first_name = models.CharField(verbose_name='Имя служащего АХЧ', max_length=30)
+    last_name = models.CharField(verbose_name='Отчество служащего АХЧ', max_length=30)
+    image = models.CharField(verbose_name='Изображение служащего АХЧ', max_length=255)
+    description = models.CharField(verbose_name='Описание служащего АХЧ', max_length=255)
+
+    class Meta:
+        verbose_name = 'Служащий АХЧ'
+        verbose_name_plural = 'Служащие АХЧ'
+
+    def __str__(self):
+        return f"{self.middle_name} {self.first_name} {self.last_name}"
 
 class Room(models.Model):
     room = models.CharField(verbose_name='Номер кабинета', max_length=30)
@@ -105,7 +135,6 @@ class Subject(models.Model):
     ]
     type_subject = models.CharField(verbose_name='Тип предмета', max_length=30, choices=type_subject_choice)
     
-    #icon = models.CharField(verbose_name='Изображение предмета', max_length=30)
     date_create = models.DateTimeField(auto_now=False, auto_created=True, verbose_name='Дата создания')
     date_edit = models.DateTimeField(auto_now=True, auto_created=False, verbose_name='Дата изменения')
 
@@ -185,6 +214,7 @@ class Absent(models.Model):
     
 class News(models.Model):
     title = models.CharField(verbose_name='Название новости', max_length=255)
+    image = models.CharField(verbose_name='Изображение новости', max_length=255)
     description = models.CharField(verbose_name='Описание новости', max_length=255)
     main_text = models.CharField(verbose_name='Основной текст новости', max_length=255)
     date_create = models.DateTimeField(auto_now=False, auto_created=True, verbose_name='Дата создания')
