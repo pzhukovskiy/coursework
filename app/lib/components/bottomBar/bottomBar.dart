@@ -1,7 +1,7 @@
+import 'package:app/components/auth/auth.dart';
 import 'package:app/components/cards/cards.dart';
-import 'package:app/components/form/form.dart';
-import 'package:app/components/reg_auth/reg_auth.dart';
 import 'package:app/pages/home/home.dart';
+import 'package:app/pages/listSchedule/listSchedule.dart';
 import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -38,12 +38,11 @@ class _BottomBar extends State<BottomBar> {
     this.context = context;
     _widgetOptions = <Widget>[
       const Home(),
-      const Text('2 страница'),
+      const ListSchedulePage(),
       Cards(myContext: context),
       const Text('4 страница'),
       // const Text('5 страница'),
-      // const FormComponent(),
-      const RegAuthPage()
+      const AuthPage()
     ];
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);

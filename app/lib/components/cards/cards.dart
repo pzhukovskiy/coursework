@@ -31,16 +31,6 @@ class Cards extends StatelessWidget {
                   },
                   child: _buildCard(
                     myContext,
-                    'Ветераны',
-                    'assets/images/college.png',
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/list');
-                  },
-                  child: _buildCard(
-                    myContext,
                     'Служащие',
                     'assets/images/college.png',
                   ),
@@ -58,16 +48,6 @@ class Cards extends StatelessWidget {
                   child: _buildCard(
                     myContext,
                     'Служащие АХЧ',
-                    'assets/images/college.png',
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/list');
-                  },
-                  child: _buildCard(
-                    myContext,
-                    'Почётные работники колледжа',
                     'assets/images/college.png',
                   ),
                 ),

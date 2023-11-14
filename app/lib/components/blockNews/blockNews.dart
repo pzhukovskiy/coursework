@@ -1,11 +1,11 @@
-import 'package:app/class/teacher.dart';
+import 'package:app/class/news.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class BlockTeacher extends StatelessWidget {
-  final Teacher teacher;
+class BlockNews extends StatelessWidget {
+  final News news;
 
-  const BlockTeacher({Key? key, required this.teacher}) : super(key: key);
+  const BlockNews({Key? key, required this.news}) : super(key: key);
 
   void _showPopup(BuildContext context) {
     showDialog(
@@ -15,14 +15,10 @@ class BlockTeacher extends StatelessWidget {
           title: Text(AppLocalizations.of(context)!.infoAboutTeacher),
           content: Column(
             children: [
-              Image.network(teacher.image, height: 100, width: 100),
+              Image.network(news.image, height: 100, width: 100),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Text("${teacher.middleName} ${teacher.firstName} ${teacher.lastName}"),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Text(teacher.description),
+                child: Text("${news.title} ${news.description} ${news.mainText}"),
               ),
             ],
           ),
@@ -65,7 +61,7 @@ class BlockTeacher extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(13.0),
-                  child: Image.network(teacher.image, height: 100, width: 100),
+                  child: Image.network(news.image, height: 100, width: 100),
                 ),
                 Expanded(
                   child: Column(
@@ -74,7 +70,7 @@ class BlockTeacher extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(8, 40, 8, 0),
                         child: Text(
-                          '${teacher.middleName} ${teacher.firstName} ${teacher.lastName}',
+                          news.title,
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,

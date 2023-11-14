@@ -1,7 +1,7 @@
 import 'package:app/components/block/firstPage.dart';
 import 'package:app/components/collegeNews/collegeNews.dart';
 import 'package:app/components/links/links.dart';
-import 'package:app/pages/listTeachers/listTeachers.dart';
+import 'package:app/pages/listNews/listNews.dart';
 import 'package:flutter/material.dart';
 
 // * Первая страница в bottom menu
@@ -22,18 +22,18 @@ class Home extends StatelessWidget {
               margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
               height: 40,
               color: Colors.green,
-              child: CollegeNews(),
+              child: const CollegeNews(),
             ),
             // * Сделать отдельный виджет с 3 новостями
             Container(
               margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
               height: 150,
-              child: ListTeachersPage(),
+              child: const ListNewsPage(),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
               height: 250,
-              child: Links(),
+              child: const Links(),
             ),
           ],
         ),

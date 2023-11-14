@@ -16,7 +16,7 @@ class AboutCollege extends StatelessWidget {
             Container(
               width: 350.0,
               height: 600.0,
-              child: Center(
+              child: const Center(
                 child: Column(
                   children: [
                     Text("1966 - во исполнение постановления ЦК КПБ и Совета Министров БССР №127 от 24.03.1966 года на базе завода имени Дзержинского создано 'Техническое училище №76-электротехники'"),

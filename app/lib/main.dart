@@ -1,8 +1,9 @@
+import 'package:app/auth/authorization/authorization.dart';
+import 'package:app/auth/registration/registration.dart';
 import 'package:app/components/aboutCollege/aboutCollege.dart';
 import 'package:app/components/bottomBar/bottomBar.dart';
-import 'package:app/components/form/form.dart';
 import 'package:app/l10n/l10n.dart';
-import 'package:app/pages/collegeNews/collegeNewsPage.dart';
+import 'package:app/pages/listNewsAppBar/listNewsAppBar.dart';
 import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return MaterialApp(
         theme: themeNotifier.themeData,
         home: const BottomBar(),
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
 
         // * Локализация работает только если менять вручную
         supportedLocales: L10n.all,
-        locale: const Locale('en'),
+        locale: const Locale('ru'),
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -55,9 +57,10 @@ class _MyAppState extends State<MyApp> {
         routes: {
           '/list': (context) => const ListTeachersPage(),
           '/about': (context) => const AboutCollege(),
-          '/news': (context) => const CollegeNewsPage(),
-          '/reg': (context) => const FormComponent(),
-          // '/auth': (context) => const FormComponent(),
+          '/news': (context) => const ListNewsAppBarPage(),
+          '/reg': (context) => const RegistrationPage(),
+          '/auth': (context) => const AuthorizationPage()
         });
+
   }
 }

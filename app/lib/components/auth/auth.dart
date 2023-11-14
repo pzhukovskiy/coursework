@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class RegAuthPage extends StatefulWidget {
-  const RegAuthPage({super.key});
+class AuthPage extends StatefulWidget {
+  const AuthPage({super.key});
 
   @override
-  State<RegAuthPage> createState() => _RegAuthPageState();
+  State<AuthPage> createState() => _AuthPageState();
 }
 
-
-
-class _RegAuthPageState extends State<RegAuthPage> {
+class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +27,7 @@ class _RegAuthPageState extends State<RegAuthPage> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Navigator.pushNamed(context, '/auth');
+                Navigator.pushNamed(context, '/auth');
               },
               child: const Text('Авторизация'),
             ),

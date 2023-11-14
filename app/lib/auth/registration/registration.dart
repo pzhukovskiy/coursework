@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:app/class/teacher.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 /// Flutter code sample for [Form].
 
-class FormComponent extends StatefulWidget {
-  const FormComponent({super.key});
+class RegistrationPage extends StatefulWidget {
+  const RegistrationPage({super.key});
 
   @override
-  State<FormComponent> createState() => _FormComponentState();
+  State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
-class _FormComponentState extends State<FormComponent> {
+class _RegistrationPageState extends State<RegistrationPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   TextEditingController emailController = TextEditingController();
@@ -37,8 +35,6 @@ class _FormComponentState extends State<FormComponent> {
       print("bad");
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {

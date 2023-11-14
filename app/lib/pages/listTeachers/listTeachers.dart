@@ -1,3 +1,4 @@
+import 'package:app/api/data.dart';
 import 'package:app/class/teacher.dart';
 import 'package:app/components/blockTeacher/blockTeacher.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class ListTeachersPage extends StatefulWidget {
 
 class _ListTeachersPageState extends State<ListTeachersPage> {
   List<Teacher> teachers = [];
+  List<Teacher> filteredTeachers = [];
+  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
@@ -22,11 +25,9 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
 
   Future<void> fetchData() async {
     final response = await http.get(
-      //https://api.dionisiubrovka.online/api/v1/teachers/
-      //79dbae9a4a3b2e4553f961f9d2ad676cd69977ee
-      Uri.parse('https://localhost:8000/api/v1/teachers/'),
+      Uri.parse('$TEST_URL/teachers'),
       headers: {
-        'Authorization': 'Token c74ffdc6445ab29dc2fb7a0199c5038f29e7e48a',
+        'Authorization': 'Token $TOKEN',
       },
     );
 
@@ -35,27 +36,57 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
       if (this.mounted) {
         setState(() {
           teachers = data.map((item) => Teacher.fromJson(item)).toList();
+          filteredTeachers = List.from(teachers);
         });
       }
     } else {
       throw Exception('Невозможно получить данные');
     }
   }
-  
+
+  // * Поиск преподавателя
+  void _filterTeachers(String query) {
+    if (query.isEmpty) {
+      setState(() {
+        filteredTeachers = List.from(teachers);
+      });
+    } else {
+      setState(() {
+        filteredTeachers = teachers
+            .where((teacher) =>
+                teacher.firstName.toLowerCase().contains(query.toLowerCase()) ||
+                teacher.lastName.toLowerCase().contains(query.toLowerCase()) ||
+                teacher.middleName.toLowerCase().contains(query.toLowerCase()))
+            .toList();
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-      children: <Widget>[
-        Expanded(
-          child: ListView.builder(
-            itemCount: teachers.length,
-            itemBuilder: (context, index) {
-              return BlockTeacher(teacher: teachers[index]);
-            },
+      appBar: AppBar(
+        title: TextField(
+          controller: searchController,
+          onChanged: _filterTeachers,
+          decoration: const InputDecoration(
+            hintText: 'Искать преподавателей',
+            hintStyle: TextStyle(color: Colors.white),
           ),
         ),
-      ],
-    ));
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: ListView.builder(
+              itemCount: filteredTeachers.length,
+              itemBuilder: (context, index) {
+                return BlockTeacher(teacher: filteredTeachers[index]);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
