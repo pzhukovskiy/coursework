@@ -1,5 +1,7 @@
-import 'package:app/components/block/myBlock.dart';
+import 'package:app/components/block/firstPage.dart';
 import 'package:app/components/collegeNews/collegeNews.dart';
+import 'package:app/components/links/links.dart';
+import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:flutter/material.dart';
 
 // * Первая страница в bottom menu
@@ -12,14 +14,26 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
-              height: 210, 
-              child: MyBlock(),
+            const SizedBox(
+              height: 210,
+              child: FirstPage(),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              height: 60,
+              height: 40,
+              color: Colors.green,
               child: CollegeNews(),
+            ),
+            // * Сделать отдельный виджет с 3 новостями
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+              height: 150,
+              child: ListTeachersPage(),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+              height: 250,
+              child: Links(),
             ),
           ],
         ),

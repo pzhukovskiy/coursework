@@ -1,5 +1,6 @@
 import 'package:app/class/teacher.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BlockTeacher extends StatelessWidget {
   final Teacher teacher;
@@ -10,20 +11,35 @@ class BlockTeacher extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return Dialog(
-          child: Column(
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.infoAboutTeacher),
+          content: Column(
             children: [
               Image.network(teacher.image, height: 100, width: 100),
-              Text('${teacher.middleName} ${teacher.firstName} ${teacher.lastName}'),
-              Text(teacher.description),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("Закрыть"),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                child: Text("${teacher.middleName} ${teacher.firstName} ${teacher.lastName}"),
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                child: Text(teacher.description),
               ),
             ],
           ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.close),
+            ),
+            // TextButton(
+            //   onPressed: () {
+            //     Navigator.of(context).pop();
+            //   },
+            //   child: Text(AppLocalizations.of(context)!.share),
+            // ),
+          ],
         );
       },
     );
@@ -62,20 +78,13 @@ class BlockTeacher extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.fromLTRB(8, 40, 8, 0),
                         child: Text(
                           '${teacher.middleName} ${teacher.firstName} ${teacher.lastName}',
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               color: textColor),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          teacher.lastName,
-                          style: TextStyle(fontSize: 12, color: textColor),
                         ),
                       ),
                     ],

@@ -16,7 +16,7 @@ class CollegeNews extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(AppLocalizations.of(context)!.collegeNews,
+                Text(AppLocalizations.of(context)!.collegeNews, // * Новости колледжа
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 InkWell(
                   onTap: () {

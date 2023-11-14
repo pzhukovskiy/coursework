@@ -14,6 +14,9 @@ class Teacher {
   String image;
   String description;
 
+  static List<Teacher> list = [];
+
+
   Teacher({
     required this.id,
     required this.room,
@@ -27,6 +30,13 @@ class Teacher {
     required this.image,
     required this.description,
   });
+
+  // TODO: Получать преподавателей
+  static void fetchData(){
+
+  }
+
+
 
   factory Teacher.fromJson(Map<String, dynamic> json) {
     if (json['group'] is Map<String, dynamic>) {

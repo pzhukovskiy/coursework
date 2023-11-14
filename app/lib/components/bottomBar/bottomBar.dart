@@ -1,5 +1,7 @@
+import 'package:app/components/cards/cards.dart';
+import 'package:app/components/form/form.dart';
+import 'package:app/components/reg_auth/reg_auth.dart';
 import 'package:app/pages/home/home.dart';
-import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,26 +27,6 @@ class _BottomBar extends State<BottomBar> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // * Неиспользуемые данные
-      switch (index) {
-        case 0:
-          appBarTitle = 'Главная';
-          break;
-        case 1:
-          appBarTitle = 'Расписание';
-          break;
-        case 2:
-          appBarTitle = 'Структура';
-          break;
-        case 3:
-          appBarTitle = 'Предложения';
-          break;
-        case 4:
-          appBarTitle = 'Профиль';
-          break;
-        default:
-          appBarTitle = 'Default Title';
-      }
     });
   }
 
@@ -57,9 +39,11 @@ class _BottomBar extends State<BottomBar> {
     _widgetOptions = <Widget>[
       const Home(),
       const Text('2 страница'),
-      const ListTeachersPage(),
+      Cards(myContext: context),
       const Text('4 страница'),
-      const Text('5 страница'),
+      // const Text('5 страница'),
+      // const FormComponent(),
+      const RegAuthPage()
     ];
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);

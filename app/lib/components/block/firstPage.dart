@@ -1,20 +1,22 @@
+import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
-class MyBlock extends StatelessWidget {
-  const MyBlock({Key? key}) : super(key: key);
+class FirstPage extends StatelessWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Scaffold(
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/college.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill
-          ),
+              image: AssetImage('assets/images/college.png'),
+              alignment: Alignment.topCenter,
+              fit: BoxFit.fill),
         ),
         child: Stack(
           children: <Widget>[
@@ -52,7 +54,11 @@ class MyBlock extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/about');
                   },
-                  child: Text(AppLocalizations.of(context)!.collegeInfo), // * About college | О колледже
+                  style: ElevatedButton.styleFrom(
+                    primary: themeNotifier.isDark ? Colors.grey[800] : Colors.blue,
+                  ),
+                  child: Text(AppLocalizations.of(context)!
+                      .collegeInfo), // * About college | О колледже
                 ),
               ),
             ),
