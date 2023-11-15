@@ -17,31 +17,24 @@ class BottomBar extends StatefulWidget {
 class _BottomBar extends State<BottomBar> {
   int _selectedIndex = 0;
   late BuildContext context;
-  String appBarTitle = 'Главная'; // * Нужно что-то с этим делать
   late List<Widget> _widgetOptions;
   late Locale currentLocale;
   late String currentLanguageCode;
   late String currentCountryCode;
 
-  // * Локализация в AppBar не работает, поэтому без нее
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
-// * Делать экраны без AppBar, и тогда оно хорошо будет показываться
-//! Чуток нужно изменить данные на бекенде
-
   @override
   Widget build(BuildContext context) {
     this.context = context;
     _widgetOptions = <Widget>[
       const Home(),
-      const ListSchedulePage(),
+      ListSchedulePage(),
       Cards(myContext: context),
-      const Text('4 страница'),
-      // const Text('5 страница'),
       const AuthPage()
     ];
 
@@ -78,10 +71,10 @@ class _BottomBar extends State<BottomBar> {
             icon: const Icon(Icons.info_outline_rounded),
             label: AppLocalizations.of(context)!.structure, //* Структура
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.business_center),
-            label: AppLocalizations.of(context)!.offers, //* Предложения
-          ),
+          // BottomNavigationBarItem(
+          //   icon: const Icon(Icons.business_center),
+          //   label: AppLocalizations.of(context)!.offers, //* Предложения
+          // ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.perm_identity_rounded),
             label: AppLocalizations.of(context)!.profile, //* Профиль

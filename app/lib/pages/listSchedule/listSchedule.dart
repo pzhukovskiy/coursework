@@ -1,4 +1,5 @@
 import 'package:app/api/data.dart';
+import 'package:app/class/group.dart';
 import 'package:app/class/schedule.dart';
 import 'package:app/components/blockSchedule/blockSchedule.dart';
 import 'package:flutter/material.dart';
@@ -13,19 +14,19 @@ class ListSchedulePage extends StatefulWidget {
 }
 
 class _ListSchedulePageState extends State<ListSchedulePage> {
-  List<Lesson> lessons = [];
+  late Future<List<Lesson>> futureLessons;
+  LessonForDay lessonForDay =
+      LessonForDay(group: Group(id: 1, groupName: "160"));
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+    futureLessons = fetchData(1);
   }
 
-  Future<void> fetchData() async {
+  Future<List<Lesson>> fetchData(int group) async {
     final response = await http.get(
-      //https://api.dionisiubrovka.online/api/v1/teachers/
-      //79dbae9a4a3b2e4553f961f9d2ad676cd69977ee
-      Uri.parse('$TEST_URL/lessons'),
+      Uri.parse('$URL/getcurrent/$group'),
       headers: {
         'Authorization': 'Token $TOKEN',
       },
@@ -33,11 +34,7 @@ class _ListSchedulePageState extends State<ListSchedulePage> {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
-      if (this.mounted) {
-        setState(() {
-          lessons = data.map((item) => Lesson.fromJson(item)).toList();
-        });
-      }
+      return data.map((item) => Lesson.fromJson(item)).toList();
     } else {
       throw Exception('Невозможно получить данные');
     }
@@ -46,17 +43,39 @@ class _ListSchedulePageState extends State<ListSchedulePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                itemCount: lessons.length,
-                itemBuilder: (context, index) {
-                  return BlockSchedule(lesson: lessons[index]);
-                },
-              ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: FutureBuilder(
+              future: futureLessons,
+              builder: (context, AsyncSnapshot<List<Lesson>> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Text('Error: ${snapshot.error}'),
+                  );
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return Center(
+                    child: Text('No data available.'),
+                  );
+                } else {
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      return BlockSchedule(
+                        lesson: snapshot.data![index],
+                      );
+                    },
+                  );
+                }
+              },
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }

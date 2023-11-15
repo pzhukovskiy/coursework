@@ -12,7 +12,7 @@ class BlockNews extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(AppLocalizations.of(context)!.infoAboutTeacher),
+          title: Text(AppLocalizations.of(context)!.news),
           content: Column(
             children: [
               Image.network(news.image, height: 100, width: 100),

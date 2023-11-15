@@ -25,7 +25,7 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
 
   Future<void> fetchData() async {
     final response = await http.get(
-      Uri.parse('$TEST_URL/teachers'),
+      Uri.parse('$URL/teachers'),
       headers: {
         'Authorization': 'Token $TOKEN',
       },

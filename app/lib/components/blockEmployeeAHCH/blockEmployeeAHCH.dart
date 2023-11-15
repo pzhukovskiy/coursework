@@ -1,11 +1,11 @@
-import 'package:app/class/employee.dart';
+import 'package:app/class/employeeAHCH.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class BlockEmployee extends StatelessWidget {
-  final Employee employee;
+class BlockEmployeeAHCH extends StatelessWidget {
+  final EmployeeAHCH employeeAHCH;
 
-  const BlockEmployee({Key? key, required this.employee}) : super(key: key);
+  const BlockEmployeeAHCH({Key? key, required this.employeeAHCH}) : super(key: key);
 
   void _showPopup(BuildContext context) {
     showDialog(
@@ -15,14 +15,14 @@ class BlockEmployee extends StatelessWidget {
           title: Text(AppLocalizations.of(context)!.infoAboutTeacher),
           content: Column(
             children: [
-              Image.network(employee.image, height: 100, width: 100),
+              Image.network(employeeAHCH.image, height: 100, width: 100),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Text("${employee.middleName} ${employee.firstName} ${employee.lastName}"),
+                child: Text("${employeeAHCH.middleName} ${employeeAHCH.firstName} ${employeeAHCH.lastName}"),
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Text(employee.description),
+                child: Text(employeeAHCH.description),
               ),
             ],
           ),
@@ -65,7 +65,7 @@ class BlockEmployee extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(13.0),
-                  child: Image.network(employee.image, height: 100, width: 100),
+                  child: Image.network(employeeAHCH.image, height: 100, width: 100),
                 ),
                 Expanded(
                   child: Column(
@@ -74,7 +74,7 @@ class BlockEmployee extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(8, 40, 8, 0),
                         child: Text(
-                          '${employee.middleName} ${employee.firstName} ${employee.lastName}',
+                          '${employeeAHCH.middleName} ${employeeAHCH.firstName} ${employeeAHCH.lastName}',
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,

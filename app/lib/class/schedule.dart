@@ -1,8 +1,13 @@
+import 'dart:math';
+
 import 'package:app/class/corpus.dart';
 import 'package:app/class/group.dart';
 import 'package:app/class/room.dart';
 import 'package:app/class/subject.dart';
 import 'package:app/class/teacher.dart';
+import 'package:app/api/data.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Lesson {
   int id;
@@ -41,6 +46,40 @@ class Lesson {
       lessonType: json['lesson_type'],
       lessonNumber: json['lesson_number'],
       date: json['date'],
+    );
+  }
+}
+
+class LessonForDay {
+  Group group;
+  List<Lesson> lessonsArray = [];
+
+  LessonForDay({
+    required this.group,
+  });
+
+  factory LessonForDay.fromJson(Map<String, dynamic> json) {
+    return LessonForDay(
+      group: Group.fromJson(json['group']),
+    );
+  } 
+}
+
+class LessonsForDayForAllGroup {
+  
+}
+
+class LessonForWeek {
+  Group group;
+  List<LessonForDay> lessonsArray = [];
+
+  LessonForWeek({
+    required this.group,
+  });
+
+  factory LessonForWeek.fromJson(Map<String, dynamic> json) {
+    return LessonForWeek(
+      group: Group.fromJson(json['group']),
     );
   }
 }

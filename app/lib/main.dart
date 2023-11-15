@@ -3,6 +3,8 @@ import 'package:app/auth/registration/registration.dart';
 import 'package:app/components/aboutCollege/aboutCollege.dart';
 import 'package:app/components/bottomBar/bottomBar.dart';
 import 'package:app/l10n/l10n.dart';
+import 'package:app/pages/listEmployees/listEmployees.dart';
+import 'package:app/pages/listEmployeesAHCH/listEmployeesAHCH.dart';
 import 'package:app/pages/listNewsAppBar/listNewsAppBar.dart';
 import 'package:app/pages/listTeachers/listTeachers.dart';
 import 'package:app/theme/theme.dart';
@@ -55,7 +57,9 @@ class _MyAppState extends State<MyApp> {
         ],
         initialRoute: '/',
         routes: {
-          '/list': (context) => const ListTeachersPage(),
+          '/list': (context) => ListTeachersPage(),
+          '/listempl': (context) => const ListEmployeesPage(),
+          '/listemplahch': (context) => const ListEmployeesAHCHPage(),
           '/about': (context) => const AboutCollege(),
           '/news': (context) => const ListNewsAppBarPage(),
           '/reg': (context) => const RegistrationPage(),

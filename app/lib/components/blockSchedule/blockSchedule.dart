@@ -19,7 +19,7 @@ class BlockSchedule extends StatelessWidget {
           content: Column(
             children: [
               Text(lesson.subject.subject),
-              Text('${lesson.teacher.lastName} ${lesson.teacher.firstName} ${lesson.teacher.middleName}'),
+              Text('${lesson.teacher.middleName} ${lesson.teacher.firstName} ${lesson.teacher.lastName}'),
             ],
           ),
           actions: [

@@ -16,7 +16,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
-  
+
   Future<void> sendPostRequest() async {
     var response = await http.post(
       //https://api.dionisiubrovka.online/api/v1/teachers/
@@ -39,47 +39,45 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Форма"),
-      ),
+      appBar: AppBar(),
       body: Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TextField(
-            controller: emailController,
-            decoration: const InputDecoration(
-              hintText: 'Почта',
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(
+                hintText: 'Почта',
+              ),
             ),
-          ),
-          TextField(
-            controller: passwordController,
-            decoration: const InputDecoration(
-              hintText: 'Пароль',
+            TextField(
+              controller: passwordController,
+              decoration: const InputDecoration(
+                hintText: 'Пароль',
+              ),
             ),
-          ),
-          TextField(
-            controller: usernameController,
-            decoration: const InputDecoration(
-              hintText: 'Никнейм',
+            TextField(
+              controller: usernameController,
+              decoration: const InputDecoration(
+                hintText: 'Никнейм',
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  print("success");
-                  sendPostRequest();
-                }
-              },
-              child: const Text('Submit'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    print("success");
+                    sendPostRequest();
+                  }
+                },
+                child: const Text('Зарегистрироваться'),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }

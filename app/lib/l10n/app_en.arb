@@ -9,8 +9,9 @@
   "profile": "Profile",
   "collegeNews": "News college",
   "seeAll": "See all",
-  "infoAboutTeacher": "Information about teacher",
+  "infoAboutTeacher": "Describe teacher",
   "close": "Close",
   "share": "Share",
-  "links": "Links and contacts"
+  "links": "Links and contacts",
+  "news": "Describe news"
 }

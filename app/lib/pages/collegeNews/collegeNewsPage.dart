@@ -24,9 +24,7 @@ class _CollegeNewsPageState extends State<CollegeNewsPage> {
 
   Future<void> fetchData() async {
     final response = await http.get(
-      //https://api.dionisiubrovka.online/api/v1/teachers/
-      //79dbae9a4a3b2e4553f961f9d2ad676cd69977ee
-      Uri.parse('$TEST_URL/news'),
+      Uri.parse('$URL/news'),
       headers: {
         'Authorization': 'Token 1095e6542f927c08b1eb5c7f036c59893527a2c5',
       },

@@ -27,7 +27,7 @@ class Cards extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/list');
+                    Navigator.pushNamed(context, '/listempl');
                   },
                   child: _buildCard(
                     myContext,
@@ -43,7 +43,7 @@ class Cards extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/list');
+                    Navigator.pushNamed(context, '/listemplahch');
                   },
                   child: _buildCard(
                     myContext,
