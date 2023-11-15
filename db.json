@@ -3,15 +3,15 @@
     "model": "simpleView.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$600000$3Z6ohMW8Cbtq7NUZhLFfIM$+XGsT7BMHw+owKRqma+1aKWC0Y0SzLwlF3O5vH1SXxE=",
-      "last_login": "2023-11-14T06:32:22.420Z",
+      "password": "pbkdf2_sha256$600000$DssYS5nHFy67QQJ31f1lpR$W/yvYKXo3CxMAJmOJidA4tXP9gPV0YSiSkmTDhaZoXE=",
+      "last_login": "2023-11-14T17:39:55.022Z",
       "is_superuser": true,
       "username": "admin",
       "last_name": "",
       "email": "",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2023-11-14T06:31:57.409Z",
+      "date_joined": "2023-11-14T17:38:18.413Z",
       "first_name": "",
       "middle_name": "",
       "student": null,
@@ -23,22 +23,6 @@
   {
     "model": "simpleView.teacher",
     "pk": 1,
-    "fields": {
-      "date_create": "2023-11-14T06:33:57Z",
-      "middle_name": "Бровка",
-      "first_name": "Дионисий",
-      "last_name": "Сергеевич",
-      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40573/ico/icon_8.png",
-      "description": "Преподаватель без категории  Окончил «Белорусский национальный технический университет» по специальности «Профессиональное обучение (информатика)».",
-      "room": 1,
-      "group": null,
-      "kurator": false,
-      "date_edit": "2023-11-14T06:34:40.700Z"
-    }
-  },
-  {
-    "model": "simpleView.teacher",
-    "pk": 2,
     "fields": {
       "date_create": "2023-11-14T06:33:57Z",
       "middle_name": "Амброжи",
@@ -54,7 +38,7 @@
   },
   {
     "model": "simpleView.teacher",
-    "pk": 3,
+    "pk": 2,
     "fields": {
       "date_create": "2023-11-14T06:33:57Z",
       "middle_name": "Анципов",
@@ -69,14 +53,462 @@
     }
   },
   {
+    "model": "simpleView.teacher",
+    "pk": 3,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Барсукова",
+      "first_name": "Екатерина",
+      "last_name": "Александровна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40533/ico/icon_4.png",
+      "description": "Образование: Окончила Белорусский государственный педагогический университет имени Максима Танка по специальности «Английский язык, белорусский язык и литература».",
+      "room": 4,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 4,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Барсукова",
+      "first_name": "Наталья",
+      "last_name": "Валентиновна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40543/ico/icon_5.png",
+      "description": "Образование: Окончила Минский государственный педагогический институт им. М. Горького по специальности «Белорусский язык и литература».",
+      "room": 5,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 5,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Берговина",
+      "first_name": "Анастасия",
+      "last_name": "Владимировна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40553/ico/icon_6.png",
+      "description": "Должность: Педагог дополнительного образования без категории",
+      "room": 101,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 6,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Богдановская",
+      "first_name": "Ольга",
+      "last_name": "Николаевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40563/ico/icon_7.png",
+      "description": "Образование: Окончила «Центр профессионального образования Первомайского района г. Минска», УО «Минский государственный высший радиотехнический колледж»",
+      "room": 6,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 7,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Бровка",
+      "first_name": "Дионисий",
+      "last_name": "Сергеевич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40573/ico/icon_8.png",
+      "description": "Окончил «Белорусский национальный технический университет» по специальности «Профессиональное обучение (информатика)».",
+      "room": 1,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 8,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Вайтович",
+      "first_name": "Инга",
+      "last_name": "Михайловна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40583/ico/icon_9.png",
+      "description": "Образование: Окончила Белорусский государственный университет им. Максима Танка по специальности «Физика. Информатика».",
+      "room": 7,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 9,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Волошин",
+      "first_name": "Владимир",
+      "last_name": "Валерьевич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/51653/ico/0-02-05-681dbc46786d8fddba42a07530bd506c00aa1cbe18dfd5bc481d93e68a4e155d_baf49dbdb4595fac.jpg",
+      "description": "Образование: Белорусский национальный технический университет по специальности 'Промышленные роботы и робототехнические комплексы'",
+      "room": 8,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 10,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Воронько",
+      "first_name": "Светлана",
+      "last_name": "Владимировна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40593/ico/icon_10.png",
+      "description": "Образование: Окончила Белорусский национальный технический университет по специальности «Метрология, стандартизация и сертификация качества».",
+      "room": 9,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 11,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Галенко",
+      "first_name": "Елена",
+      "last_name": "Львовна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40603/ico/icon_11.png",
+      "description": "Образование: Окончила Белорусский государственный университет им. В. И. Ленина по специальности «История».",
+      "room": 10,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 12,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Герасюк",
+      "first_name": "Владислав",
+      "last_name": "Валерьевич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40613/ico/icon_12.png",
+      "description": "Окончил БГУИР по специальности «Проектирование и производство программно-управляемых электронных средств»",
+      "room": 11,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 13,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Громыко",
+      "first_name": "Наталья",
+      "last_name": "Казимировна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40623/ico/icon_13.png",
+      "description": "Образование: Окончила Белорусский государственный университет им. В. И. Ленина по специальности «Политическая экономия»",
+      "room": 12,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 14,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Дзевенская",
+      "first_name": "Раиса",
+      "last_name": "Иссаковна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40633/ico/icon_14.png",
+      "description": "Образование: Окончила Ленинградский государственный педагогический институт им. А. И. Герцена по специальности «Химия»",
+      "room": 13,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 15,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Дорц",
+      "first_name": "Надежда",
+      "last_name": "Анатольевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40653/ico/icon_16.png",
+      "description": "Образование: Окончила УО «БНТУ» по специальности «Автоматизация технологических процессов и производств»",
+      "room": 14,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 16,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Дудко",
+      "first_name": "Алла",
+      "last_name": "Романовна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40663/ico/icon_17.png",
+      "description": "Образование: Окончила Минский государственный педагогический институт им. М. Горького по специальности «Физика».",
+      "room": 15,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 17,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Жукова",
+      "first_name": "Татьяна",
+      "last_name": "Юрьевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40673/ico/icon_18.png",
+      "description": "Образование: Окончила Белорусский государственный ордена Трудового Красного Знамени институт по специальности «Физическая культура и спорт»",
+      "room": 16,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 18,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Калацкая",
+      "first_name": "Татьяна",
+      "last_name": "Евгеньевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40693/ico/icon_20.png",
+      "description": "Образование: Окончила Белорусский государственный университет по специальности «Математика (научно-педагогическая деятельность)».",
+      "room": 17,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 19,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Камельчук",
+      "first_name": "Юрий",
+      "last_name": "Андреевич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/51693/ico/photo_2023-10-16_16-04-31.jpg",
+      "description": "Образование: УО 'Полесский государственный университет' по специальности 'Информационные системы и технологии(в экономике)'",
+      "room": 18,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 20,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Касперович",
+      "first_name": "Светлана",
+      "last_name": "Александровна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40703/ico/icon_21.png",
+      "description": "Окончила Рязанский государственный педагогический институт им. С. Есенина (Россия) по специальности «Физика с дополнительной специальностью математика».",
+      "room": 17,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 21,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Камлюк",
+      "first_name": "Виктор",
+      "last_name": "Сергеевич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40713/ico/icon_22.png",
+      "description": "Окончил Минский радиотехнический институт по специальности «Полупроводники и диэлектрики»",
+      "room": 19,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 22,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Козел",
+      "first_name": "Александр",
+      "last_name": "Александрович",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40733/ico/icon_24.png",
+      "description": "Окончил УО «Белорусский государственный педагогический университет им. М Танка» по специальности «Биология. Химия».",
+      "room": 20,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 23,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Кохно",
+      "first_name": "Тамара",
+      "last_name": "Аркадьевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40743/ico/icon_25.png",
+      "description": "Окончила Белорусский государственный педагогический университет по специальности «Белорусский язык и литература».",
+      "room": 21,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 24,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Красовская",
+      "first_name": "Анастасия",
+      "last_name": "Викторовна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40773/ico/icon_28.png",
+      "description": "Окончила УО 'Белорусский государственный экономический университет' по специальности 'Лингвистическое обеспечение межкультурных коммуникаций (внешнеэкономические связи)'",
+      "room": 22,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 25,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Кулецкая",
+      "first_name": "Юлия",
+      "last_name": "Николаевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40803/ico/icon_31.png",
+      "description": "Окончила УО «Минский государственный высший радиотехнический колледж» по специальности «Информатика по уровню высшей школы»",
+      "room": 18,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 25,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Кульбеда",
+      "first_name": "Максим",
+      "last_name": "Павлович",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40813/ico/icon_32.png",
+      "description": "Окончил Полесский государственный университет по специальности «Информационные системы и технологии»",
+      "room": 23,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 26,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Лебедкина",
+      "first_name": "Наталья",
+      "last_name": "Викторовна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40833/ico/icon_34.png",
+      "description": "Окончила Техническое училище № 76 электроники г. Минска, УО «Белорусский государственный университет им. В. И. Ленина» по специальности «Физика»",
+      "room": 24,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 27,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Левонюк",
+      "first_name": "Елизавета",
+      "last_name": "Анатольевна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40853/ico/O15A1667[1].jpg",
+      "description": "Образование: Окончила Полесский государственный университет по специальности «Информационные системы и технологии».",
+      "room": 25,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 28,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Леус",
+      "first_name": "Жанна",
+      "last_name": "Владимировна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40863/ico/icon_37.png",
+      "description": "Образование: Окончила Минский государственный педагогический институт им. А.М.Горького по специальности «Физика и математика»",
+      "room": 26,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
+    "model": "simpleView.teacher",
+    "pk": 29,
+    "fields": {
+      "date_create": "2023-11-14T06:33:57Z",
+      "middle_name": "Лихачева",
+      "first_name": "Ольга",
+      "last_name": "Петровна",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/40873/ico/icon_38.png",
+      "description": "Образование: Окончила Минское педагогическое училище № 2 по специальности «Начальная школа»",
+      "room": 27,
+      "group": null,
+      "kurator": false,
+      "date_edit": "2023-11-14T06:34:40.700Z"
+    }
+  },
+  {
     "model": "simpleView.employee",
     "pk": 1,
     "fields": {
-      "middle_name": "Ананич",
-      "first_name": "Владимир",
-      "last_name": "Дмитриевич",
-      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/42783/ico/icon_31.png",
-      "description": "Образование: Окончил УО «Минский политехнический техникум» по специальности «Обработка металлов резанием», УО «Республиканский институт профессионального образования» по специальности «Профессиональное обучение»."
+      "middle_name": "Галицкий",
+      "first_name": "Максим",
+      "last_name": "Игоревич",
+      "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/42743/ico/icon_27.png",
+      "description": "Образование: Окончил «Белорусский национальный технический университет» по специальности «Профессиональное обучение (информатика)»."
     }
   },
   {
@@ -87,9 +519,20 @@
       "first_name": "Александр",
       "last_name": "Степанович",
       "image": "https://mgkct.minskedu.gov.by/files/02049/obj/650/42713/ico/icon_24.png",
-      "description": "Образование: Окончил Государственное профессионально-техническое училище № 118 машиностроения г. Барановичи, Минский заочный политехнический техникум по специальности «Обработка металлов резанием»"
+      "description": "Образование: Окончил Государственное профессионально-техническое училище № 118 машиностроения, Минский заочный политехнический техникум по специальности «Обработка металлов резанием»"
     }
   },
+  {
+    "model": "simpleView.room",
+    "pk": 100,
+    "fields": { "room": "-", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 101,
+    "fields": { "room": "-", "corpus": 2 }
+  },
+
   {
     "model": "simpleView.room",
     "pk": 1,
@@ -104,6 +547,126 @@
     "model": "simpleView.room",
     "pk": 3,
     "fields": { "room": "4-208", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 4,
+    "fields": { "room": "3-210", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 5,
+    "fields": { "room": "701", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 6,
+    "fields": { "room": "2-108", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 7,
+    "fields": { "room": "3-205", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 8,
+    "fields": { "room": "3-113", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 9,
+    "fields": { "room": "703", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 10,
+    "fields": { "room": "2-212", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 11,
+    "fields": { "room": "3-114", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 12,
+    "fields": { "room": "2-211", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 13,
+    "fields": { "room": "602", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 14,
+    "fields": { "room": "504", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 15,
+    "fields": { "room": "502", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 16,
+    "fields": { "room": "Улица либо Спортзал", "corpus": 2 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 17,
+    "fields": { "room": "304", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 18,
+    "fields": { "room": "501", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 19,
+    "fields": { "room": "3-103 (лаб)", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 20,
+    "fields": { "room": "302", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 21,
+    "fields": { "room": "702", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 22,
+    "fields": { "room": "2-314", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 23,
+    "fields": { "room": "604", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 24,
+    "fields": {"room": "2-312", "corpus": 2}
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 25,
+    "fields": { "room": "503", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 26,
+    "fields": { "room": "3-212", "corpus": 1 }
+  },
+  {
+    "model": "simpleView.room",
+    "pk": 27,
+    "fields": { "room": "402", "corpus": 1 }
   },
   {
     "model": "simpleView.lesson",
@@ -151,6 +714,21 @@
     }
   },
   {
+    "model": "simpleView.lesson",
+    "pk": 4,
+    "fields": {
+      "subgroup": 1,
+      "lesson_type": "Дипломное проектирование",
+      "room": 6,
+      "teacher": 6,
+      "subject": 1,
+      "group": 5,
+      "corpus": 1,
+      "lesson_number": 2,
+      "date": "2023-11-14"
+    }
+  },
+  {
     "model": "simpleView.corpus",
     "pk": 1,
     "fields": { "corpus": "г. Минск, ул. Казинца, 91" }
@@ -193,9 +771,49 @@
       "date_edit": "2023-11-14T06:34:54.440Z"
     }
   },
-  { "model": "simpleView.group", "pk": 1, "fields": { "group": "56" } },
-  { "model": "simpleView.group", "pk": 2, "fields": { "group": "57" } },
-  { "model": "simpleView.group", "pk": 3, "fields": { "group": "58" } },
+  { "model": "simpleView.group", "pk": 1, "fields": { "group": "160*" } },
+  { "model": "simpleView.group", "pk": 2, "fields": { "group": "162*" } },
+  { "model": "simpleView.group", "pk": 3, "fields": { "group": "163*" } },
+  { "model": "simpleView.group", "pk": 4, "fields": { "group": "164*" } },
+  { "model": "simpleView.group", "pk": 5, "fields": { "group": "165*" } },
+  { "model": "simpleView.group", "pk": 6, "fields": { "group": "166*" } },
+  { "model": "simpleView.group", "pk": 7, "fields": { "group": "49" } },
+  { "model": "simpleView.group", "pk": 8, "fields": { "group": "50" } },
+  { "model": "simpleView.group", "pk": 9, "fields": { "group": "51" } },
+  { "model": "simpleView.group", "pk": 10, "fields": { "group": "52" } },
+  { "model": "simpleView.group", "pk": 11, "fields": { "group": "53" } },
+  { "model": "simpleView.group", "pk": 12, "fields": { "group": "54" } },
+  { "model": "simpleView.group", "pk": 13, "fields": { "group": "55" } },
+  { "model": "simpleView.group", "pk": 14, "fields": { "group": "56" } },
+  { "model": "simpleView.group", "pk": 15, "fields": { "group": "57" } },
+  { "model": "simpleView.group", "pk": 16, "fields": { "group": "58" } },
+  { "model": "simpleView.group", "pk": 17, "fields": { "group": "59*" } },
+  { "model": "simpleView.group", "pk": 18, "fields": { "group": "60" } },
+  { "model": "simpleView.group", "pk": 19, "fields": { "group": "61" } },
+  { "model": "simpleView.group", "pk": 20, "fields": { "group": "62" } },
+  { "model": "simpleView.group", "pk": 21, "fields": { "group": "63" } },
+  { "model": "simpleView.group", "pk": 22, "fields": { "group": "64" } },
+  { "model": "simpleView.group", "pk": 23, "fields": { "group": "65" } },
+  { "model": "simpleView.group", "pk": 24, "fields": { "group": "66" } },
+  { "model": "simpleView.group", "pk": 25, "fields": { "group": "67" } },
+  { "model": "simpleView.group", "pk": 26, "fields": { "group": "68" } },
+  { "model": "simpleView.group", "pk": 27, "fields": { "group": "69" } },
+  { "model": "simpleView.group", "pk": 28, "fields": { "group": "70" } },
+  { "model": "simpleView.group", "pk": 29, "fields": { "group": "71" } },
+  { "model": "simpleView.group", "pk": 30, "fields": { "group": "72" } },
+  { "model": "simpleView.group", "pk": 31, "fields": { "group": "73" } },
+  { "model": "simpleView.group", "pk": 32, "fields": { "group": "74" } },
+  { "model": "simpleView.group", "pk": 33, "fields": { "group": "75" } },
+  { "model": "simpleView.group", "pk": 34, "fields": { "group": "76" } },
+  { "model": "simpleView.group", "pk": 35, "fields": { "group": "77" } },
+  { "model": "simpleView.group", "pk": 36, "fields": { "group": "78" } },
+  { "model": "simpleView.group", "pk": 37, "fields": { "group": "79" } },
+  { "model": "simpleView.group", "pk": 38, "fields": { "group": "8" } },
+  { "model": "simpleView.group", "pk": 39, "fields": { "group": "80" } },
+  { "model": "simpleView.group", "pk": 40, "fields": { "group": "81" } },
+  { "model": "simpleView.group", "pk": 41, "fields": { "group": "82" } },
+  { "model": "simpleView.group", "pk": 42, "fields": { "group": "83" } },
+  { "model": "simpleView.group", "pk": 43, "fields": { "group": "84" } },
   {
     "model": "simpleView.news",
     "pk": 1,

@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse
 from .models import *
 from rest_framework import viewsets
 from .serializators import *
+from datetime import date, timedelta
+from rest_framework.response import Response
 
 # Create your views here.
 def pageindex(request):
@@ -17,6 +19,14 @@ def pageid(request, id):
 class TeacherModelViewSet(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
+
+class EmployeeModelViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
+class EmployeeAHCHModelViewSet(viewsets.ModelViewSet):
+    queryset = EmployeeAHCH.objects.all()
+    serializer_class = EmployeeAHCHSerializer
 
 class RoomModelViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
@@ -46,18 +56,20 @@ class NewsModelViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
 
-#python manage.py runserver
-#python manage.py startapp simpleView
-#python manage.py makemigrations
-#python manage.py migrate
-#python manage.py makemigrations simpleView
-#django-admin startproject webapi . 
-#pip freeze > req.txt
-#python -m venv env
-#env\scripts\activate
-#createsuperuser
-
-#http://127.0.0.1:8000/api/v1/auth/token/login
-
-#docker tag diplomaback-web pavelzhukovskiy/diploma
-#docker push pavelzhukovskiy/diploma
+#get lesson
+class GetLessonsForCurrentDateGroupViewSet(viewsets.ViewSet):
+    def list(self, request, pk=1):
+        queryset = Lesson.objects.filter(date=date.today()).filter(group=pk)
+        serializer = LessonSerializer(queryset, many=True)
+        return Response(serializer.data)
+    
+class GetLessonsForWeekGroupViewSet(viewsets.ViewSet):
+    def list(self, request):
+        day = date.today()
+        start_week = day - timedelta(days=day.weekday())
+        end_week = start_week + timedelta(days=6)
+        queryset = Lesson.objects.filter(date__range = (start_week, end_week)).order_by("group__id")
+        serializer = LessonSerializer(queryset, many=True)
+        print(start_week)
+        print(end_week)
+        return Response(serializer.data)

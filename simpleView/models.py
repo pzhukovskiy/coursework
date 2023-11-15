@@ -103,7 +103,7 @@ class Lesson(models.Model):
 
     #Номер пары
     lesson_number = models.PositiveSmallIntegerField(verbose_name='Номер пары')
-    date = models.DateField(auto_now=True, verbose_name='Дата проведения')
+    date = models.DateField(verbose_name='Дата проведения')
 
     class Meta:
         verbose_name = 'Урок'

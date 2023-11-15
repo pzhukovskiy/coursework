@@ -58,3 +58,13 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
         fields = "__all__"
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = "__all__"
+
+class EmployeeAHCHSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EmployeeAHCH
+        fields = "__all__"
