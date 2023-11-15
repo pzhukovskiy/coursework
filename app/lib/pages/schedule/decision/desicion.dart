@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AuthPage extends StatefulWidget {
-  const AuthPage({Key? key}) : super(key: key);
+class DesicionPage extends StatefulWidget {
+  const DesicionPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthPage> createState() => _AuthPageState();
+  State<DesicionPage> createState() => _DesicionPageState();
 }
 
-class _AuthPageState extends State<AuthPage> {
+class _DesicionPageState extends State<DesicionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,17 +17,17 @@ class _AuthPageState extends State<AuthPage> {
           children: <Widget>[
             _buildButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/reg');
+                Navigator.pushNamed(context, '/day');
               },
-              text: 'Регистрация',
+              text: 'Расписание на день',
               color: Colors.blue,
             ),
             SizedBox(height: 16),
             _buildButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/auth');
+                Navigator.pushNamed(context, '/week');
               },
-              text: 'Авторизация',
+              text: 'Расписание на неделю',
               color: Colors.green,
             ),
           ],

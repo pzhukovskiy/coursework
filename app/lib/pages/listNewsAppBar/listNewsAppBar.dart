@@ -13,15 +13,15 @@ class ListNewsAppBarPage extends StatefulWidget {
 }
 
 class _ListNewsAppBarPageState extends State<ListNewsAppBarPage> {
-  List<News> news = [];
+  late Future<List<News>> futureNews;
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+    futureNews = fetchData();
   }
 
-  Future<void> fetchData() async {
+  Future<List<News>> fetchData() async {
     final response = await http.get(
       Uri.parse('$URL/news'),
       headers: {
@@ -31,11 +31,7 @@ class _ListNewsAppBarPageState extends State<ListNewsAppBarPage> {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
-      if (this.mounted) {
-        setState(() {
-          news = data.map((item) => News.fromJson(item)).toList();
-        });
-      }
+      return data.map((item) => News.fromJson(item)).toList();
     } else {
       throw Exception('Невозможно получить данные');
     }
@@ -45,17 +41,37 @@ class _ListNewsAppBarPageState extends State<ListNewsAppBarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                itemCount: news.length,
-                itemBuilder: (context, index) {
-                  return BlockNews(news: news[index]);
-                },
-              ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: FutureBuilder(
+              future: futureNews,
+              builder: (context, AsyncSnapshot<List<News>> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Text('Ошибка: ${snapshot.error}'),
+                  );
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return const Center(
+                    child: Text('Данные недоступны'),
+                  );
+                } else {
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      return BlockNews(news: snapshot.data![index]);
+                    },
+                  );
+                }
+              },
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }

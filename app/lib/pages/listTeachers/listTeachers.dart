@@ -44,7 +44,6 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
     }
   }
 
-  // * Поиск преподавателя
   void _filterTeachers(String query) {
     if (query.isEmpty) {
       setState(() {
@@ -73,6 +72,7 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
             hintText: 'Искать преподавателей',
             hintStyle: TextStyle(color: Colors.white),
           ),
+          style: TextStyle(color: Colors.white), // Set text color to white
         ),
       ),
       body: Column(

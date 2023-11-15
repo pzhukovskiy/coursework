@@ -1,14 +1,8 @@
-import 'dart:math';
-
 import 'package:app/class/corpus.dart';
 import 'package:app/class/group.dart';
 import 'package:app/class/room.dart';
 import 'package:app/class/subject.dart';
 import 'package:app/class/teacher.dart';
-import 'package:app/api/data.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
 class Lesson {
   int id;
   Room room;

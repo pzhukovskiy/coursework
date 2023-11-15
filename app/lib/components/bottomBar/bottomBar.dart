@@ -1,7 +1,7 @@
 import 'package:app/components/auth/auth.dart';
 import 'package:app/components/cards/cards.dart';
 import 'package:app/pages/home/home.dart';
-import 'package:app/pages/listSchedule/listSchedule.dart';
+import 'package:app/pages/schedule/decision/desicion.dart';
 import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +33,7 @@ class _BottomBar extends State<BottomBar> {
     this.context = context;
     _widgetOptions = <Widget>[
       const Home(),
-      ListSchedulePage(),
+      const DesicionPage(),
       Cards(myContext: context),
       const AuthPage()
     ];

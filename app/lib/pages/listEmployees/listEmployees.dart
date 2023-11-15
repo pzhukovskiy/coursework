@@ -13,15 +13,15 @@ class ListEmployeesPage extends StatefulWidget {
 }
 
 class _ListEmployeesPageState extends State<ListEmployeesPage> {
-  List<Employee> employees = [];
+  late Future<List<Employee>> futureEmployees;
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+    futureEmployees = fetchData();
   }
 
-  Future<void> fetchData() async {
+  Future<List<Employee>> fetchData() async {
     final response = await http.get(
       Uri.parse('$URL/employees'),
       headers: {
@@ -31,11 +31,7 @@ class _ListEmployeesPageState extends State<ListEmployeesPage> {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
-      if (this.mounted) {
-        setState(() {
-          employees = data.map((item) => Employee.fromJson(item)).toList();
-        });
-      }
+      return data.map((item) => Employee.fromJson(item)).toList();
     } else {
       throw Exception('Невозможно получить данные');
     }
@@ -44,15 +40,35 @@ class _ListEmployeesPageState extends State<ListEmployeesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      ),
+      appBar: AppBar(),
       body: Column(
         children: <Widget>[
           Expanded(
-            child: ListView.builder(
-              itemCount: employees.length,
-              itemBuilder: (context, index) {
-                return BlockEmployee(employee: employees[index]);
+            child: FutureBuilder(
+              future: futureEmployees,
+              builder: (context, AsyncSnapshot<List<Employee>> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Text('Ошибка: ${snapshot.error}'),
+                  );
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return const Center(
+                    child: Text('Данные недоступны'),
+                  );
+                } else {
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      return BlockEmployee(
+                        employee: snapshot.data![index],
+                      );
+                    },
+                  );
+                }
               },
             ),
           ),

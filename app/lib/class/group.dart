@@ -8,22 +8,6 @@ class Group {
   String groupName;
   static List<Group> groups = [];
 
-  static Future<void> fetchGroups() async {
-    final response = await http.get(
-      Uri.parse('$URL/groups/'),
-      headers: {
-        'Authorization': 'Token $TOKEN',
-      },
-    );
-
-    if (response.statusCode == 200) {
-      final List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
-      await data.map((item) => groups.add(Group.fromJson(item)));
-    } else {
-      throw Exception('Невозможно получить данные');
-    }
-  }
-
   Group({
     required this.id,
     required this.groupName,
@@ -34,5 +18,28 @@ class Group {
       id: json['id'],
       groupName: json['group'],
     );
+  }
+
+  static Future<List<Group>> getFetchAll() async {
+    var url = Uri.parse("$URL/groups/");
+    final response = await http.get(url, headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Token $TOKEN"
+    });
+
+    final List body = json.decode(utf8.decode(response.bodyBytes));
+    return body.map((e) => Group.fromJson(e)).toList();
+  }
+
+  Future<List<Lesson>> getTodayTimetable() async {
+    var url =
+        Uri.parse("$URL/getcurrent/$id/");
+    final response = await http.get(url, headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Token $TOKEN"
+    });
+
+    final List body = json.decode(utf8.decode(response.bodyBytes));
+    return body.map((e) => Lesson.fromJson(e)).toList();
   }
 }

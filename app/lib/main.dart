@@ -7,6 +7,8 @@ import 'package:app/pages/listEmployees/listEmployees.dart';
 import 'package:app/pages/listEmployeesAHCH/listEmployeesAHCH.dart';
 import 'package:app/pages/listNewsAppBar/listNewsAppBar.dart';
 import 'package:app/pages/listTeachers/listTeachers.dart';
+import 'package:app/pages/schedule/listScheduleForDay/listScheduleForDay.dart';
+import 'package:app/pages/schedule/listScheduleForWeek/listScheduleForWeek.dart';
 import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -63,7 +65,9 @@ class _MyAppState extends State<MyApp> {
           '/about': (context) => const AboutCollege(),
           '/news': (context) => const ListNewsAppBarPage(),
           '/reg': (context) => const RegistrationPage(),
-          '/auth': (context) => const AuthorizationPage()
+          '/auth': (context) => const AuthorizationPage(),
+          '/day': (context) => const ListScheduleForDayPage(),
+          '/week': (context) => const ListScheduleForWeekPage()
         });
 
   }
