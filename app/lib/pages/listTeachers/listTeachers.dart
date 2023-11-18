@@ -72,7 +72,7 @@ class _ListTeachersPageState extends State<ListTeachersPage> {
             hintText: 'Искать преподавателей',
             hintStyle: TextStyle(color: Colors.white),
           ),
-          style: TextStyle(color: Colors.white), // Set text color to white
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Column(

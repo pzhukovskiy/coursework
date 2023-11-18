@@ -48,7 +48,6 @@ class _MyAppState extends State<MyApp> {
         home: const BottomBar(),
         debugShowCheckedModeBanner: false,
 
-        // * Локализация работает только если менять вручную
         supportedLocales: L10n.all,
         locale: const Locale('ru'),
         localizationsDelegates: const [
@@ -59,7 +58,7 @@ class _MyAppState extends State<MyApp> {
         ],
         initialRoute: '/',
         routes: {
-          '/list': (context) => ListTeachersPage(),
+          '/list': (context) => const ListTeachersPage(),
           '/listempl': (context) => const ListEmployeesPage(),
           '/listemplahch': (context) => const ListEmployeesAHCHPage(),
           '/about': (context) => const AboutCollege(),

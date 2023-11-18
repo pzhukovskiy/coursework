@@ -45,7 +45,7 @@ class _ListScheduleForWeekPageState extends State<ListScheduleForWeekPage> {
                             style: TextStyle(color: textColor),
                           ),
                           FutureBuilder(
-                            future: snapshot.data![index].getTodayTimetable(),
+                            future: snapshot.data![index].getWeekTimetable(),
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
                                 return Column(
@@ -54,13 +54,13 @@ class _ListScheduleForWeekPageState extends State<ListScheduleForWeekPage> {
                                   children: snapshot.data!
                                       .map(
                                         (e) => Card(
-                                          color: cardColor, // Set card color based on theme
+                                          color: cardColor,
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Text(
-                                              e.id.toString() +
+                                              e.lessonNumber.toString() +
                                                   "  " +
-                                                  e.lessonType.toString(),
+                                                  e.subject.subject.toString(),
                                               style: TextStyle(color: textColor),
                                             ),
                                           ),

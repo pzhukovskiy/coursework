@@ -32,8 +32,18 @@ class Group {
   }
 
   Future<List<Lesson>> getTodayTimetable() async {
-    var url =
-        Uri.parse("$URL/getcurrent/$id/");
+    var url = Uri.parse("$URL/getcurrent/$id/");
+    final response = await http.get(url, headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Token $TOKEN"
+    });
+
+    final List body = json.decode(utf8.decode(response.bodyBytes));
+    return body.map((e) => Lesson.fromJson(e)).toList();
+  }
+
+  Future<List<Lesson>> getWeekTimetable() async {
+    var url = Uri.parse("$URL/getforweek/");
     final response = await http.get(url, headers: {
       "Content-Type": "application/json",
       "Authorization": "Token $TOKEN"
